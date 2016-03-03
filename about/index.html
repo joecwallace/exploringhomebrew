@@ -25,9 +25,10 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="nav" style="position: relative;">
 
-    <div class="site-wrapper">
+    <a name="home"></a>
+    <div id="home" class="site-wrapper site-wrapper-primary">
 
       <div class="site-wrapper-inner">
 
@@ -40,33 +41,23 @@
               </h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <!-- <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li> -->
+                  <li class="active"><a href="#home">Home</a></li>
+                  <li><a href="#tickets">Tickets</a></li>
+                  <!-- <li><a href="#">Contact</a></li> -->
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">Home brewing: it's adult science lab.</h1>
-            <p class="lead">We'll be drinking beer to benefit <a href="http://www.explorecommunityschool.com/">Explore! Community School</a> on May 13. Interested? Enter your email below, and you could be first to buy tickets!</p>
+            <h1 class="cover-heading">H<sub>2</sub>O + Grain + Hops + Yeast = Beer!</h1>
+            <p class="lead">Nashville's first festival celebrating the art, craft, and TASTE of homebrewed beer.</p>
+            <p>The event will recruit the best beer homebrewers in the region to provide homebrew samples at the festival. Home brew enthusiasts in Nashville are invited to taste product from local brewers and vote on their favorites.</p>
+            <p>Proceeds will benefit <a href="http://explorecommunityschool.com">EXPLORE! COMMUNITY SCHOOL</a> in East Nashville.</p>
+            <p>If you are a homebrewer and want to show your stuff, please contact <a href="mailto:info@exploringhomebrew.com">info@exploringhomebrew.com</a>.</p>
+            <p>Exploring Homebrew is a 3rd party special event, organized by volunteers. We'll be drinking beer to benefit <a href="http://www.explorecommunityschool.com/">Explore! Community School</a> on May 13. Interested? Enter your email below, and you could be first to buy tickets!</p>
 
-            <!-- Begin MailChimp Signup Form -->
-            <form action="//exploringhomebrew.us12.list-manage.com/subscribe/post?u=9402b5cc4337b5c360373636b&amp;id=8fe6731923" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-inline" target="_blank" novalidate>
-                <div class="form-group">
-                <input type="email" value="" name="EMAIL" class="form-control" placeholder="email address" required style="min-width:220px;">
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9402b5cc4337b5c360373636b_8fe6731923" tabindex="-1" value=""></div>
-            </div>
-                <input type="submit" value="Subscribe" name="subscribe" class="btn btn-default">
-            </form>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>&copy; 2016 Exploring Home Brew.</p>
-            </div>
+            <a id="cta" class="btn btn-lg btn-warning" href="#tickets">Buy Tickets Now!</a>
           </div>
 
         </div>
@@ -75,15 +66,49 @@
 
     </div>
 
+    <a name="tickets"></a>
+    <div id="tickets" class="site-wrapper site-wrapper-secondary">
+        <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+      <p class="lead">Buy your tickets now!</h3>
+      <p>A limited number of early bird tickets are available for just $40, but when they're gone, they're gone.</p>
+      <div style="width:100%; text-align:left;" ><iframe  src="//eventbrite.com/tickets-external?eid=22480723449&ref=etckt" frameborder="0" height="214" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a class="powered-by-eb" style="color: #dddddd; text-decoration: none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Powered by Eventbrite</a></div></div>
+
+      </div>
+      </div>
+
+    </div>
+
+<div class="cover-container">
+      <div class="mastfoot">
+        <div class="inner text-center">
+          <p>&copy; 2016 Exploring Home Brew.</p>
+        </div>
+      </div>
+  </div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')</script>
+    <script src="/components/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $("#cta, .masthead-nav a").on('click', function(event){
+            event.preventDefault();
+
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+        });
+    </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-    
+
         <script type="text/javascript">
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
